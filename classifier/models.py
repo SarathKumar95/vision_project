@@ -1,6 +1,6 @@
 from django.db import models
 
-class PredictedImage(models.Model):
-    image = models.ImageField(upload_to='images/')
-    predictions = models.JSONField()  # Store predictions as JSON data
-    created_at = models.DateTimeField(auto_now_add=True)
+class RecognizedFace(models.Model):
+    label = models.CharField(max_length=255)
+    probability = models.FloatField()
+    image = models.ImageField(upload_to='uploads/')

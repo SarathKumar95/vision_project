@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Face Recognition API</title>
+</head>
+<body>
+    <h1>Test Face Recognition API</h1>
+    <form method="post" action="{% url 'recognize-face' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="image">
+        <button type="submit">Recognize</button>
+    </form>
+</body>
+</html>

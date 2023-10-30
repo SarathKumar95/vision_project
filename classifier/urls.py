@@ -1,9 +1,7 @@
-# vision_project/urls.py
-
 from django.urls import path
-from django.views.generic import TemplateView
+from .views import FaceRecognitionView, TestFormView
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='upload.html'), name='classifier'),
-    # Add other URL patterns here as needed
+    path('recognize-face/', FaceRecognitionView.as_view(), name='recognize-face'),
+    path('test-form/', TestFormView.as_view(), name='test-form'),
 ]
